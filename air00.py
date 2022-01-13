@@ -1,6 +1,5 @@
 #Split
 
-from ast import literal_eval
 import sys
 
 #Gestion d'erreur
