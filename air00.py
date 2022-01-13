@@ -1,5 +1,6 @@
 #Split
 
+from ast import literal_eval
 import sys
 
 #Gestion d'erreur
@@ -10,14 +11,19 @@ if len(sys.argv) != 2:
 
 #Fonction
 def spliter(chaine=sys.argv[1:]):
-    tour = 0
-    for i in chaine[tour]:
-        if (i == " ") or (i == "\n") or (i == "\t"):
-            print()
+    liste_separer = []
+    string = ""
+    for i in chaine[0]:
+        if (i == " ") or (i == "\t") or (i == "\n"):
+            liste_separer.append(string)
+            string = ""
 
-        else :
-            print(i, end="")
-        tour += 1
+        else:
+            string += i
+    liste_separer.append(string)
+
+    for j in liste_separer:
+        print(j)
 
     
 spliter()
